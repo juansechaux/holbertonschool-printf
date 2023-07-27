@@ -37,6 +37,17 @@ char sfunct(char *str, va_list arguments)
 	char *s = va_arg(arguments, char *);
 	int j = 0;
 
+	if (s == NULL)
+	{
+		s = "(null)";
+		while (s[j] != '\0')
+		{
+			str[_strlen(str)] = s[j];
+			j++;
+		}
+	}
+
+	else
 	while (s[j] != '\0')
 	{
 		str[_strlen(str)] = s[j];
