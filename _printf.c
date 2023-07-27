@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, x;
-	char *str = malloc(1024 * sizeof(char));
+	char *str = malloc(4000 * sizeof(char));
 	va_list arguments;
 
 	type_cases cases[] = {
