@@ -1,66 +1,48 @@
 #include "main.h"
 
+/**
+ * _printf - funtion
+ * @format: string to print
+ * Return: return the size of the bufer or str to print
+ */
+
 int _printf(const char *format, ...)
 {
-	int i = 0;
+	int i = 0, x;
 	char *str = malloc(50 * sizeof(char));
 	va_list arguments;
 
+	type_cases cases[] = {
+		{"%", perfunct},
+		{"c", cfunct},
+		{"s", sfunct},
+		{NULL, NULL}
+	};
 	if (str == NULL)
 		return (0);
-
 	str[0] = '\0';
 	va_start(arguments, format);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == 'c')
+			for (x = 0; cases[x].ptr != NULL; x++)
 			{
-				str[strlen(str) + 1] = '\0';
-				str[strlen(str)] = va_arg(arguments, int);
-			}
-			else if (format[i + 1] == 's')
-			{
-				char *s = va_arg(arguments, char *);
-				int j = 0;
-
-				while (s[j] != '\0')
+				if (format[i + 1] == *(cases[x].ptr))
 				{
-					str[strlen(str)] = s[j];
-					j++;
+					cases[x].function(str, arguments);
+					i++;
 				}
 			}
-			else if (format[i + 1] == '%')
-			{
-				str[strlen(str) + 1] = '\0';
-				str[strlen(str)] = '%';
-			}
-			else if (format[i + 1] == 'd')
-			{
-
-			}
-			else if (format[i + 1] == 'i')
-			{
-
-			}
-			else
-			{
-				str[strlen(str) + 1] = '\0';
-				str[strlen(str)] = format[i];
-			}
-			i++;
 		}
 		else
 		{
-			str[strlen(str) + 1] = '\0';
-			str[strlen(str)] = format[i];
+			str[_strlen(str) + 1] = '\0';
+			str[_strlen(str)] = format[i];
 		}
 		i++;
 	}
-	i = 0;
-	while (str[i] != '\0')
-		i++;
+	i = _strlen(str);
 	write(1, str, i);
 	va_end(arguments);
 	free(str);

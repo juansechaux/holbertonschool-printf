@@ -10,7 +10,24 @@
 
 int _printf(const char *format, ...);
 
+/**
+ * struct cases - Struct cases
+ * @ptr: points to the type of format specifier
+ * @function: points to the function associated
+ */
 
+typedef struct cases
+{
+	char *ptr;
+	char (*function)(char *str, va_list arguments);
+} type_cases;
+
+
+
+int _strlen(char *s);
+char cfunct(char *str, va_list arguments);
+char perfunct(char *str, __attribute__((unused)) va_list arguments);
+char sfunct(char *str, va_list arguments);
 
 
 #endif
