@@ -93,7 +93,7 @@ char dfunct(char *str, va_list arguments)
 
 	x = num;
 
-	while (x > 10)
+	while (x >= 10)
 	{
 		x = x / 10;
 		a++;
