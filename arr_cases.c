@@ -5,6 +5,7 @@ type_cases cases[] = {
 	{"c", cfunct},
 	{"s", sfunct},
 	{"d", dfunct},
+	{"i", dfunct},
 	{NULL, NULL}
 };
 
