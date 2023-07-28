@@ -27,6 +27,7 @@ int form_h(const char *format, char *str,
 
 type_cases *get_cases();
 
+int powr(int base, int expo);
 int _strlen(char *s);
 char cfunct(char *str, va_list arguments);
 char perfunct(char *str, __attribute__((unused)) va_list arguments);

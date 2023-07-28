@@ -17,4 +17,21 @@ int _strlen(char *s)
 	}
 	return (r);
 }
+/**
+ * powr - returns the power y of base x
+ * @base: base number
+ * @expo: exponential
+ *
+ * Return: Result
+ */
+int powr(int base, int expo)
+{
+	int res = 1;
+	int i;
 
+	for (i = 0; i < expo; i++)
+	{
+		res = res * base;
+	}
+	return (res);
+}
