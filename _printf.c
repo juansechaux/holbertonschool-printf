@@ -9,6 +9,8 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, x;
+	char m = 'f';
+	int loop = 0;
 	char *str = malloc(4000 * sizeof(char));
 	va_list arguments;
 
@@ -26,27 +28,34 @@ int _printf(const char *format, ...)
 	}
 	str[0] = '\0';
 	va_start(arguments, format);
-	while (format[i] != '\0')
+	while (format[i] != '\0' && loop == 0)
 	{
 		if (format[i] == '%')
 		{
+			m = 'f';
 			for (x = 0; cases[x].ptr != NULL; x++)
 			{
 				if (format[i + 1] == *(cases[x].ptr))
 				{
-					cases[x].function(str, arguments);
+					loop = cases[x].function(str, arguments);
 					i++;
+					m = 't';
 				}
+			}
+			if (m == 'f')
+			{
+				add(str, format[i]);
 			}
 		}
 		else
 		{
-			str[_strlen(str) + 1] = '\0';
-			str[_strlen(str)] = format[i];
+			add(str, format[i]);
 		}
 		i++;
 	}
 	i = _strlen(str);
+	if (loop == 1)
+		i++;
 	write(1, str, i);
 	va_end(arguments);
 	free(str);
