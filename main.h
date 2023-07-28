@@ -32,5 +32,6 @@ char cfunct(char *str, va_list arguments);
 char perfunct(char *str, __attribute__((unused)) va_list arguments);
 char sfunct(char *str, va_list arguments);
 char add(char *str, char format);
+char dfunct(char *str, va_list arguments);
 
 #endif

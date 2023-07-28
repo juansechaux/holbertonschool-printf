@@ -4,6 +4,7 @@ type_cases cases[] = {
 	{"%", perfunct},
 	{"c", cfunct},
 	{"s", sfunct},
+	{"d", dfunct},
 	{NULL, NULL}
 };
 
