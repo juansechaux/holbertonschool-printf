@@ -19,7 +19,10 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 	if (str == NULL)
+	{
+		free(str);
 		return (0);
+	}
 	str[0] = '\0';
 	va_start(arguments, format);
 	while (format[i] != '\0')
