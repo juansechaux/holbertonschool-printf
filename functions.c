@@ -10,8 +10,16 @@ char cfunct(char *str, va_list arguments)
 {
 	char ch = va_arg(arguments, int);
 
-	str[_strlen(str) + 1] = '\0';
-	str[_strlen(str)] = ch;
+	if (ch == '\0')
+	{
+		str[_strlen(str)] = ch;
+		str[_strlen(str)+1] = ch;
+	}
+	else
+	{
+		str[_strlen(str) + 1] = '\0';
+		str[_strlen(str)] = ch;
+	}
 	return (0);
 }
 /**
