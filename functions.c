@@ -38,6 +38,7 @@ char add(char *str, char format)
 {
 	str[_strlen(str) + 1] = '\0';
 	str[_strlen(str)] = format;
+	return (0);
 }
 /**
  * sfunct - adds a string to the main string
