@@ -29,7 +29,7 @@ int form_h(const char *format, char *str, va_list arguments, type_cases *cases)
 					i++;
 					m = 't';
 				}
-				if (m = 't')
+				if (m == 't')
 					break;
 			}
 			if (m == 'f')
