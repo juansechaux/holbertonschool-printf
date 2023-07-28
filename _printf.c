@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	};
 	if (str == NULL || format == NULL)
 	{
-		write(2,str,i)
+		write(2,str,i);
 		va_end(arguments);
 		free(str);
 		return (0);
