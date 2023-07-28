@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 		{"s", sfunct},
 		{NULL, NULL}
 	};
-	if (str == NULL || format == NULL || *format == "%")
+	if (str == NULL || format == NULL || *format == '%')
 	{
 		va_end(arguments);
 		free(str);
