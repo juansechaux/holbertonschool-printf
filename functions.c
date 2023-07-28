@@ -106,5 +106,6 @@ char dfunct(char *str, va_list arguments)
 		str[_strlen(str)] = (p + '0');
 		x = x - (p * powr(10, (a - i)));
 	}
+	return (0);
 }
 
