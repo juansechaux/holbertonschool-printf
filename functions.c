@@ -13,7 +13,6 @@ char cfunct(char *str, va_list arguments)
 	if (ch == '\0')
 	{
 		str[_strlen(str)] = ch;
-		write(1, &format, 2);
 	}
 	else
 	{
