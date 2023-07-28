@@ -18,12 +18,8 @@ int _printf(const char *format, ...)
 		{"s", sfunct},
 		{NULL, NULL}
 	};
-	if (str == NULL)
-	{
-		va_end(arguments);
-		free(str);
+	if (str == NULL || format == NULL)
 		return (0);
-	}
 	str[0] = '\0';
 	va_start(arguments, format);
 	while (format[i] != '\0')
