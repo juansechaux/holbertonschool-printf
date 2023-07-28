@@ -18,12 +18,14 @@ int _printf(const char *format, ...)
 		{"s", sfunct},
 		{NULL, NULL}
 	};
-	if (str == NULL)
-		return (0);
+	if (str == NULL || format == NULL)
+	{
+		va_end(arguments);
+		free(str);
+		return (-1);
+	}
 	str[0] = '\0';
 	va_start(arguments, format);
-	if (format)
-	{
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
@@ -46,7 +48,6 @@ int _printf(const char *format, ...)
 	}
 	i = _strlen(str);
 	write(1, str, i);
-	}
 	va_end(arguments);
 	free(str);
 	return (i);
