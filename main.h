@@ -22,6 +22,9 @@ typedef struct cases
 	char (*function)(char *str, va_list arguments);
 } type_cases;
 
+int form_h(const char *format, char *str,
+		va_list arguments, type_cases *cases);
+
 type_cases *get_cases();
 
 int _strlen(char *s);
