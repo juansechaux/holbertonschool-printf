@@ -13,13 +13,8 @@ int _printf(const char *format, ...)
 	int loop = 0;
 	char *str = malloc(4000 * sizeof(char));
 	va_list arguments;
+	type_cases *cases = get_cases();
 
-	type_cases cases[] = {
-		{"%", perfunct},
-		{"c", cfunct},
-		{"s", sfunct},
-		{NULL, NULL}
-	};
 	if (str == NULL || format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		va_end(arguments);

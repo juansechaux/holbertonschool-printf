@@ -22,7 +22,7 @@ typedef struct cases
 	char (*function)(char *str, va_list arguments);
 } type_cases;
 
-
+type_cases *get_cases();
 
 int _strlen(char *s);
 char cfunct(char *str, va_list arguments);
