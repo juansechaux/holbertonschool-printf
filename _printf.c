@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
 	};
 	if (str == NULL)
 	{
+		va_end(arguments);
 		free(str);
 		return (0);
 	}
