@@ -78,11 +78,7 @@ char sfunct(char *str, va_list arguments)
  */
 char dfunct(char *str, va_list arguments)
 {
-	int num = va_arg(arguments, int);
-	int a = 0;
-	int x;
-	int i;
-	int p;
+	int num = va_arg(arguments, int), a = 0, x, i, p;
 	char is_min = 'f';
 
 	if (num == -2147483648)
