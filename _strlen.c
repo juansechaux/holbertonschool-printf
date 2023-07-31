@@ -35,3 +35,4 @@ int powr(int base, int expo)
 	}
 	return (res);
 }
+
